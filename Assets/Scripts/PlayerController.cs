@@ -113,8 +113,12 @@ public class PlayerController : MonoBehaviour
 		// add velocity to the stake
 		stake.GetComponent<Rigidbody>().velocity = stake.transform.forward * 20;
 
-		// mark the time the stake was created
-		lastFire = Time.time;
+        Vector4 hackColor = new Color(-0.4f, -0.4f, -0.4f, 1);
+        var light = stake.GetComponent<Light>();
+        light.color = new Color(hackColor.x, hackColor.y, hackColor.z, hackColor.w);
+
+        // mark the time the stake was created
+        lastFire = Time.time;
 
 		// remove stake after 2 seconds
 		Destroy(stake, 2.0f);

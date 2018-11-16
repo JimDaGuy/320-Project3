@@ -10,6 +10,7 @@ TagManager:
   - Wood
   - Meat
   - HealthSlider
+  - LightOrb
   layers:
   - Default
   - TransparentFX

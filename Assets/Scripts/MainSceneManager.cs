@@ -17,18 +17,7 @@ public class MainSceneManager : MonoBehaviour
     public GameObject deathCanvas;
     public GameObject pauseCanvas;
 
-    public Vector3 ghostSpawnBoxMin;
-    public Vector3 ghostSpawnBoxMax;
-    public Vector3 vampireSpawnBoxMin;
-    public Vector3 vampireSpawnBoxMax;
-    public GameObject vampire;
-    public GameObject ghost;
-    public int startVampires;
-    public int startGhosts;
-    public float timeBetweenGhostSpawns = 5.0f;
-    private float ghostSpawnTimer = 0.0f;
-    public float timeBetweenVampireSpawns = 5.0f;
-    private float vampireSpawnTimer = 0.0f;
+    public GameObject[] lightOrbs;
 
     public GameObject player;
     public UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
@@ -41,24 +30,14 @@ public class MainSceneManager : MonoBehaviour
     {
         currentState = GameStates.Ingame;
         Time.timeScale = 1;
-
-        for (int i = 0; i < startVampires; i++)
-        {
-            Instantiate(vampire, new Vector3(Random.Range(vampireSpawnBoxMin.x, vampireSpawnBoxMax.x), Random.Range(vampireSpawnBoxMin.y, vampireSpawnBoxMax.y), Random.Range(vampireSpawnBoxMin.z, vampireSpawnBoxMax.z)), new Quaternion());
-        }
-        for (int i = 0; i < startGhosts; i++)
-        {
-            Instantiate(ghost, new Vector3(Random.Range(ghostSpawnBoxMin.x, ghostSpawnBoxMax.x), Random.Range(ghostSpawnBoxMin.y, ghostSpawnBoxMax.y), Random.Range(ghostSpawnBoxMin.z, ghostSpawnBoxMax.z)), new Quaternion());
-        }
-        //foreach (GameObject vampireObj in GameObject.FindGameObjectsWithTag("VampireObj"))
-        //{
-        //    vampires.Add(vampireObj);
-        //}
     }
 
     // Update is called once per frame
     void Update()
     {
+        //find all light orbs in the scene to update the light orb array
+        lightOrbs = GameObject.FindGameObjectsWithTag("LightOrb");
+
         playerHealth = player.GetComponent<PlayerController>().health;
 
         switch (currentState)
@@ -114,20 +93,6 @@ public class MainSceneManager : MonoBehaviour
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
                 }
-
-                //add a ghost every five seconds
-                if (ghostSpawnTimer > 5.0f)
-                {
-                    Instantiate(ghost, new Vector3(Random.Range(ghostSpawnBoxMin.x, ghostSpawnBoxMax.x), Random.Range(ghostSpawnBoxMin.y, ghostSpawnBoxMax.y), Random.Range(ghostSpawnBoxMin.z, ghostSpawnBoxMax.z)), new Quaternion());
-                    ghostSpawnTimer = 0.0f;
-                }
-                else if(vampireSpawnTimer > timeBetweenVampireSpawns)
-                {
-                    Instantiate(vampire, new Vector3(Random.Range(vampireSpawnBoxMin.x, vampireSpawnBoxMax.x), Random.Range(vampireSpawnBoxMin.y, vampireSpawnBoxMax.y), Random.Range(vampireSpawnBoxMin.z, vampireSpawnBoxMax.z)), new Quaternion());
-                    vampireSpawnTimer = 0.0f;
-                }
-                ghostSpawnTimer += Time.deltaTime;
-                vampireSpawnTimer += Time.deltaTime;
 
                 break;
             case GameStates.Paused:

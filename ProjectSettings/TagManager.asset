@@ -10,6 +10,7 @@ TagManager:
   - Wood
   - Meat
   - HealthSlider
+  - Pickup
   layers:
   - Default
   - TransparentFX

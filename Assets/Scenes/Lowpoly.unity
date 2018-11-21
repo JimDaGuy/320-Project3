@@ -1738,7 +1738,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 157904246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 323208301}
@@ -3105,30 +3105,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a529a0d29a456042b3da364bdebc788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ironStakePrefab: {fileID: 1282459986517426, guid: 0a7c2d4723c15fb4696c4d73ae88dc09,
+  lightPrefab: {fileID: 1321106899974454, guid: b82b6fe22d08c044681947778e82c34d,
     type: 2}
-  woodStakePrefab: {fileID: 1530166004133046, guid: 64282323ef76f1d499e2750de109fb61,
-    type: 2}
-  meatStakePrefab: {fileID: 1353479244426272, guid: 303bce6d2c5db044d8131eac681a40c9,
-    type: 2}
-  ironStakeUIPrefab: {fileID: 1103883989604314, guid: cf12efff0854b664d93cc8905caf2708,
-    type: 2}
-  woodStakeUIPrefab: {fileID: 1954130064445316, guid: 2129f3d70e1c5f74b9412ffbca162aec,
-    type: 2}
-  meatStakeUIPrefab: {fileID: 1269893677441850, guid: b6be425a7d0149246885137e267be6f8,
-    type: 2}
-  stakeSpawn: {fileID: 157904247}
+  lightUIPrefab: {fileID: 0}
+  lightSpawn: {fileID: 157904247}
   playerCharacter: {fileID: 302653868}
   heldItemParent: {fileID: 1031027186}
-  heldStake: {fileID: 1052067674}
-  heldStakeUIParent: {fileID: 1484272496}
-  heldStakeUI: {fileID: 1276603785}
-  heldStakeText: {fileID: 1890010850}
+  heldLight: {fileID: 0}
+  heldLightUIParent: {fileID: 0}
+  heldLightUI: {fileID: 0}
+  heldLightText: {fileID: 0}
   scoreText: {fileID: 670867518}
   healthSlider: {fileID: 0}
   SceneManager: {fileID: 1668176884}
   stateString: 
-  currentWeapon: 1
   health: 0
   score: 0
 --- !u!114 &323208299 stripped
@@ -10114,11 +10104,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1e5c742accdc1824fb01f98f446fa63c,
     type: 2}
   m_PrefabInternal: {fileID: 1045358111}
---- !u!1 &1052067674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1282459986517426, guid: 0a7c2d4723c15fb4696c4d73ae88dc09,
-    type: 2}
-  m_PrefabInternal: {fileID: 973909770}
 --- !u!1001 &1055104555
 Prefab:
   m_ObjectHideFlags: 0
@@ -10731,8 +10716,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1120934415}
-  m_LocalRotation: {x: -0.07570835, y: -0.52325076, z: -0.1403708, w: 0.8371219}
-  m_LocalPosition: {x: 0.7482815, y: -0.23557091, z: 187.01465}
+  m_LocalRotation: {x: -0.08349499, y: -0.6217378, z: -0.17977764, w: 0.7577273}
+  m_LocalPosition: {x: 19.615662, y: -10.099136, z: 181.10585}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1313370059}
@@ -12357,11 +12342,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7df388c5ec9cfc0448c43705dde5718b,
     type: 3}
   m_PrefabInternal: {fileID: 1281814278}
---- !u!1 &1276603785 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1103883989604314, guid: cf12efff0854b664d93cc8905caf2708,
-    type: 2}
-  m_PrefabInternal: {fileID: 1147101120}
 --- !u!1001 &1281814278
 Prefab:
   m_ObjectHideFlags: 0

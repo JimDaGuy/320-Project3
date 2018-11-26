@@ -41,8 +41,8 @@ public class Devil : Vehicle
             if(mainLightDistance == float.MaxValue)
                 ultimateForce += Seek(player.transform.position) * seekWeight;
             //the devil has gotten relatively close to the light, start to turn their attention back towards the player
-            else if(mainLightDistance < 20.0f)
-                ultimateForce += Seek(player.transform.position) * seekWeight / 2;
+            //else if(mainLightDistance < 20.0f)
+            //    ultimateForce += Seek(player.transform.position) * seekWeight / 2;
         }
         //wandering once the player has despawned
         else

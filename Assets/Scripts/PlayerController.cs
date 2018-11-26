@@ -59,10 +59,10 @@ public class PlayerController : MonoBehaviour
 	
 	void Update () 
 	{
-	    stateString = SceneManager.GetComponent<MainSceneManager>().currentState.ToString();
-        scoreText.text = "Score: " + score;
+        //stateString = SceneManager.GetComponent<MainSceneManager>().currentState.ToString();
+        //   scoreText.text = "Score: " + score;
 
-	    if (stateString == "Ingame")
+        if (stateString == "Ingame")
 	    {
 	        float xPos = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
 	        float yPos = Input.GetAxis("Vertical") * Time.deltaTime * 150.0f;
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
 		lastFire = Time.time;
 
 		// remove stake after 2 seconds
-		Destroy(stake, 2.0f);
+		Destroy(stake, 4.0f);
 	}
 	
 	void CycleWeapons(bool forward)

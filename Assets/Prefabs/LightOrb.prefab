@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 135739773984030958}
   - component: {fileID: 108843636372368868}
   - component: {fileID: 54432025984522374}
+  - component: {fileID: 114908904929560762}
   m_Layer: 0
   m_Name: LightOrb
   m_TagString: LightOrb
@@ -138,6 +139,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114908904929560762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862234116410486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc1d2a3a4489be4d8bdc206b5f2304e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135739773984030958
 SphereCollider:
   m_ObjectHideFlags: 1

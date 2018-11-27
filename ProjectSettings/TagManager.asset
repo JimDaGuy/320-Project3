@@ -11,6 +11,7 @@ TagManager:
   - Meat
   - HealthSlider
   - Pickup
+  - LightOrb
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - 
   - 
   - NonWalkable
-  - 
-  - 
+  - orb
+  - player
   - 
   - 
   - 

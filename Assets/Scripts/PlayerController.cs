@@ -106,6 +106,8 @@ public class PlayerController : MonoBehaviour
 		// create a transform from the stakeSpawn and the playerCharacter
 		Transform stakeRot = stakeSpawn;
 		stakeRot.rotation = playerCharacter.transform.rotation;
+
+        //Transform newPos = new Transform(stakeSpawn.x, stakeSpawn.y, stakeSpawn.z);
 	
 		// create a stake from a bullet prefab
 		var stake = (GameObject)Instantiate(stakePrefab, stakeSpawn.position, stakeRot.rotation);

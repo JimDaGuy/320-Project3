@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 108843636372368868}
   - component: {fileID: 54432025984522374}
   - component: {fileID: 114908904929560762}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LightOrb
   m_TagString: LightOrb
   m_Icon: {fileID: 0}

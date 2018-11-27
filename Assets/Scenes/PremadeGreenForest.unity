@@ -1164,31 +1164,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a529a0d29a456042b3da364bdebc788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ironStakePrefab: {fileID: 1862234116410486, guid: 2f9523b8ceb99464584d5475f80d930a,
+  lightPrefab: {fileID: 1862234116410486, guid: 2f9523b8ceb99464584d5475f80d930a,
     type: 2}
-  woodStakePrefab: {fileID: 1530166004133046, guid: 64282323ef76f1d499e2750de109fb61,
+  lightUIPrefab: {fileID: 1862234116410486, guid: 2f9523b8ceb99464584d5475f80d930a,
     type: 2}
-  meatStakePrefab: {fileID: 1353479244426272, guid: 303bce6d2c5db044d8131eac681a40c9,
-    type: 2}
-  ironStakeUIPrefab: {fileID: 1862234116410486, guid: 2f9523b8ceb99464584d5475f80d930a,
-    type: 2}
-  woodStakeUIPrefab: {fileID: 1954130064445316, guid: 2129f3d70e1c5f74b9412ffbca162aec,
-    type: 2}
-  meatStakeUIPrefab: {fileID: 1269893677441850, guid: b6be425a7d0149246885137e267be6f8,
-    type: 2}
-  stakeSpawn: {fileID: 1003232088}
+  lightSpawn: {fileID: 1843694481}
   playerCharacter: {fileID: 1003232083}
   heldItemParent: {fileID: 0}
-  heldStake: {fileID: 0}
-  heldStakeUIParent: {fileID: 0}
-  heldStakeUI: {fileID: 0}
-  heldStakeText: {fileID: 0}
+  heldLight: {fileID: 0}
+  heldLightUIParent: {fileID: 0}
+  heldLightUI: {fileID: 0}
+  heldLightText: {fileID: 0}
   scoreText: {fileID: 0}
   healthSlider: {fileID: 0}
   SceneManager: {fileID: 898103782}
   stateString: 
-  currentWeapon: 0
+  sticky: 1
   health: 0
+  ammo: 0
   score: 0
 --- !u!4 &1003232088 stripped
 Transform:
@@ -2125,7 +2118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1843694481}
   m_Layer: 16
-  m_Name: GameObject
+  m_Name: LightSpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2138,7 +2131,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1843694480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1003232088}

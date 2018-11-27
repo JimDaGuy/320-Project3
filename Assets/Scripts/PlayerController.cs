@@ -52,19 +52,11 @@ public class PlayerController : MonoBehaviour
 	
 	void Update () 
 	{
-<<<<<<< HEAD
-	        stateString = SceneManager.GetComponent<MainSceneManager>().currentState.ToString();
-                //scoreText.text = "Score: " + score;
-
-	        if (stateString == "Ingame")
-	        {
-=======
         //stateString = SceneManager.GetComponent<MainSceneManager>().currentState.ToString();
         //   scoreText.text = "Score: " + score;
 
         if (stateString == "Ingame")
 	    {
->>>>>>> MercadanteImplementation
 	        float xPos = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
 	        float yPos = Input.GetAxis("Vertical") * Time.deltaTime * 150.0f;
 	        float zPos = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
@@ -106,7 +98,7 @@ public class PlayerController : MonoBehaviour
 		lastFire = Time.time;
 
 		// remove stake after 2 seconds
-		Destroy(stake, 4.0f);
+		Destroy(light, 4.0f);
 	}
 	
         /*

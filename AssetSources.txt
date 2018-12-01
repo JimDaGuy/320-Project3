@@ -13,3 +13,5 @@ Several assets from the Unity Asset Store were utilized.
 - Heart in UI taken from Open Game Art - https://opengameart.org/content/heart-3
 - Nature Kit by KenneyNL - Environment Prefabs - https://kenney.nl/assets/nature-kit
 - Castle Kit by KenneyNL - Environment Prefabs - https://kenney.nl/assets/castle-kit
+
+- Mana Symbol https://opengameart.org/content/colored-summoning-circles

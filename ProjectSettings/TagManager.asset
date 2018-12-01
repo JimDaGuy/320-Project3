@@ -12,6 +12,7 @@ TagManager:
   - HealthSlider
   - Pickup
   - LightOrb
+  - ManaSlider
   layers:
   - Default
   - TransparentFX

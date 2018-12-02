@@ -57,8 +57,7 @@ public class PlayerController : MonoBehaviour
 	
 	void Update () 
 	{
-        //stateString = SceneManager.GetComponent<MainSceneManager>().currentState.ToString();
-        //   scoreText.text = "Score: " + score;
+        stateString = SceneManager.GetComponent<MainSceneManager>().currentState.ToString();
 
         if (stateString == "Ingame")
 	    {

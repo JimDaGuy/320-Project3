@@ -13,6 +13,8 @@ TagManager:
   - Pickup
   - LightOrb
   - ManaSlider
+  - PlayerHUD
+  - PauseScreen
   layers:
   - Default
   - TransparentFX

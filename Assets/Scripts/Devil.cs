@@ -18,6 +18,12 @@ public class Devil : Vehicle
 
     protected override void CalcSteeringForces()
     {
+        // if player is in starting zone, don't begin to seek
+        if (player.transform.position.x > 170 && player.transform.position.x < 230 
+                && player.transform.position.z > 815 && player.transform.position.z < 880)    // x = 170 to 239 z = 880 to 815
+        {
+                return;
+        }
 
         //find the closest human and hunt them down, paying no mind to building edges
         Vector3 ultimateForce = new Vector3();

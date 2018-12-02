@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
 	        light = (GameObject)Instantiate(lightPrefab, lightSpawn.position, lightRot.rotation);
 	
 		// add velocity to the light
-		light.GetComponent<Rigidbody>().velocity = light.transform.forward * 10;
+		light.GetComponent<Rigidbody>().velocity = light.transform.forward * 15;
 
 		// mark the time the light was created
 		lastFire = Time.time;

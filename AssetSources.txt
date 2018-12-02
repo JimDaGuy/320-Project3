@@ -15,3 +15,4 @@ Several assets from the Unity Asset Store were utilized.
 - Castle Kit by KenneyNL - Environment Prefabs - https://kenney.nl/assets/castle-kit
 
 - Mana Symbol https://opengameart.org/content/colored-summoning-circles
+- Main Menu Background https://unsplash.com/@jacekraniowski

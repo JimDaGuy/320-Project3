@@ -31,12 +31,15 @@ public class Devil : Vehicle
         //seeking the lights in the scene
         float mainLightDistance = float.MaxValue;
         foreach (GameObject lightOrb in GameObject.FindGameObjectWithTag("Manager").GetComponent<MainSceneManager>().lightOrbs)
-        {
-            float distanceToOrb = Vector3.Distance(gameObject.transform.position, lightOrb.transform.position);
-            if ( distanceToOrb < mainLightDistance)
+        {   
+            if (gameObject != null && lightOrb != null)
             {
-                ultimateForce = Seek(lightOrb.transform.position) * distanceToOrb;
-                mainLightDistance = distanceToOrb;
+                float distanceToOrb = Vector3.Distance(gameObject.transform.position, lightOrb.transform.position);
+                if (distanceToOrb < mainLightDistance)
+                {
+                    ultimateForce = Seek(lightOrb.transform.position) * distanceToOrb;
+                    mainLightDistance = distanceToOrb;
+                }
             }
         }
 

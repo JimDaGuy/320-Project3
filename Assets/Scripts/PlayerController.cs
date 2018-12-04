@@ -173,8 +173,8 @@ public class PlayerController : MonoBehaviour
             //        light.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             //}
 
-            // decrement player health when a ghost or vampire is "hitting" them
-            if (other.gameObject.name == "Ghost" || other.gameObject.name == "Ghost(Clone)" || other.gameObject.name == "Vampire" || other.gameObject.name == "Vampire(Clone)")
+            // decrement player health when an enemy is hitting
+            if (other.gameObject.name == "Moon_Shell" || other.gameObject.name == "Moon_Shell(Clone)")
             {
                 health--;
                 healthSlider.GetComponent<Slider>().value = health;
@@ -190,10 +190,10 @@ public class PlayerController : MonoBehaviour
 
         private void OnTriggerStay(Collider other)
         {
-            if (stateString == "Ingame")
+        if (stateString == "Ingame")
             {
                 // decrement player health when a ghost or vampire is "hitting" them
-                if (other.gameObject.name == "Ghost" || other.gameObject.name == "Ghost(Clone)" || other.gameObject.name == "Vampire" || other.gameObject.name == "Vampire(Clone)")
+                if (other.gameObject.name == "Moon_Shell" || other.gameObject.name == "Moon_Shell(Clone)")
                 {
                     health--;
                     healthSlider.GetComponent<Slider>().value = health;

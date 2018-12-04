@@ -51,6 +51,9 @@ public class MainSceneManager : MonoBehaviour
 
                     currentState = GameStates.Ended;
                     Time.timeScale = 0;
+
+                    // Turn off sound
+                    AudioListener.volume = 0f;
                 }
 
                 // Fade controls UI over time
@@ -142,12 +145,18 @@ public class MainSceneManager : MonoBehaviour
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
 
+                    // Turn on sound
+                    AudioListener.volume = 1.0f;
+
                     SceneManager.LoadScene(0);
                 }
 
                 // Restart Game
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
+                    // Turn on sound
+                    AudioListener.volume = 1.0f;
+
                     Time.timeScale = 1;
                     SceneManager.LoadScene(1);
                 }

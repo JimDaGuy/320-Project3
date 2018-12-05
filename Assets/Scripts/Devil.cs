@@ -10,10 +10,16 @@ public class Devil : Vehicle
     //public Material targetMat;
     public GameObject player;
 
+    //vars for the two speeds of this monster
+    private float defaultSpeed;
+    private float chasingLightSpeed;
+
     // Use this for initialization
     protected override void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        defaultSpeed = maxSpeed;
+        chasingLightSpeed = maxSpeed * 2;
     }
 
     protected override void CalcSteeringForces()
@@ -28,38 +34,49 @@ public class Devil : Vehicle
         //find the closest human and hunt them down, paying no mind to building edges
         Vector3 ultimateForce = new Vector3();
 
-        //seeking the lights in the scene
-        float mainLightDistance = float.MaxValue;
+        //seeking the nearby lights in the scene
+        float maxDistance = 50.0f;
         foreach (GameObject lightOrb in GameObject.FindGameObjectWithTag("Manager").GetComponent<MainSceneManager>().lightOrbs)
         {   
             if (gameObject != null && lightOrb != null)
             {
                 float distanceToOrb = Vector3.Distance(gameObject.transform.position, lightOrb.transform.position);
-                if (distanceToOrb < mainLightDistance)
+                if (distanceToOrb < maxDistance)
                 {
                     ultimateForce = Seek(lightOrb.transform.position) * distanceToOrb;
-                    mainLightDistance = distanceToOrb;
+                    maxDistance = distanceToOrb;
+                    maxSpeed = chasingLightSpeed;
+                }
+                //delete the light orb if the monster is close enough and temporarily stop the monster
+                if(maxDistance < 1.0f)
+                {
+                    velocity = new Vector3();
+                    acceleration = new Vector3();
+                    Destroy(lightOrb);
                 }
             }
         }
 
-        //seeking the player in the scene
-        if (player)
+        //if no lights were found, look for the player nearby
+        if (maxDistance == 50.0f)
         {
-            //if there are no lights, pursue the player soley
-            if(mainLightDistance == float.MaxValue)
+            //make sure the player exists and its close enough to the monster to matter
+            if(player && Vector3.Distance(gameObject.transform.position, player.transform.position) < maxDistance)
+            {
                 ultimateForce += Seek(player.transform.position) * seekWeight;
-            //the devil has gotten relatively close to the light, start to turn their attention back towards the player
-            //else if(mainLightDistance < 20.0f)
-            //    ultimateForce += Seek(player.transform.position) * seekWeight / 2;
-        }
-        //wandering once the player has despawned
-        else
-        {
-            ultimateForce += Wander() * wanderWeight;
+                maxSpeed = defaultSpeed;
+            }
+            //wandering if nothing is nearby or the player has despawned
+            else
+            {
+                ultimateForce += Wander() * wanderWeight;
+                maxSpeed = defaultSpeed;
+            }
         }
         //avoid obstacles
         ultimateForce += AvoidObstacles() * avoidObstacleWeight;
+        //avoid other monsters
+        ultimateForce += Separation(GameObject.FindGameObjectWithTag("Manager").GetComponent<MainSceneManager>().monsters) * separationWeight;
         ultimateForce = ultimateForce.normalized * maxForce;
         ApplyForce(ultimateForce);
     }

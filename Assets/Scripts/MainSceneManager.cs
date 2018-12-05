@@ -16,6 +16,7 @@ public class MainSceneManager : MonoBehaviour
     public GameObject pauseCanvas;
 
     public GameObject[] lightOrbs;
+    public GameObject[] monsters;
 
     public GameObject player;
     public UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
@@ -26,6 +27,7 @@ public class MainSceneManager : MonoBehaviour
     {
         currentState = GameStates.Ingame;
         Time.timeScale = 1;
+        monsters = GameObject.FindGameObjectsWithTag("Monster");
     }
 
     // Update is called once per frame

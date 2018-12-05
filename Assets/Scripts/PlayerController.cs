@@ -86,12 +86,6 @@ public class PlayerController : MonoBehaviour
                     manaSlider.GetComponent<Slider>().value = (float)ammo / (float)maxAmmo * 100.0f;
                 }
             }
-
-            //// Cycle weapons on scroll
-            //if (Input.mouseScrollDelta.y > 0f)
-            //    CycleWeapons(true);
-            //else if (Input.mouseScrollDelta.y < 0f)
-            //    CycleWeapons(false);
         }
 	}
 
@@ -157,12 +151,12 @@ public class PlayerController : MonoBehaviour
         heldLightUI = newLightUI;
     }
 	
-	private void OnTriggerEnter(Collider other)
+	private void OnCollisionEnter(Collision other)
 	{
         if (stateString == "Ingame")
         {
-            // Kill player on collision with water
-            if (other.gameObject.name == "Water4Advanced")
+            //"End" the game when the player reaches the end house
+            if (other.gameObject.tag == "EndHouse")
             {
                 health = 0;
             }
@@ -173,11 +167,11 @@ public class PlayerController : MonoBehaviour
             //        light.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             //}
 
-            // decrement player health when an enemy is hitting
-            if (other.gameObject.name == "Moon_Shell" || other.gameObject.name == "Moon_Shell(Clone)")
+            // kill the player if the monster hits them
+            if (other.gameObject.tag == "Monster")
             {
-                health--;
-                healthSlider.GetComponent<Slider>().value = health;
+                //Debug.Log("Hitting the monster!");
+                health = 0;
             }
 
             if (other.gameObject.tag == "Pickup")
@@ -188,16 +182,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-        private void OnTriggerStay(Collider other)
-        {
-        if (stateString == "Ingame")
-            {
-                // decrement player health when a ghost or vampire is "hitting" them
-                if (other.gameObject.name == "Moon_Shell" || other.gameObject.name == "Moon_Shell(Clone)")
-                {
-                    health--;
-                    healthSlider.GetComponent<Slider>().value = health;
-                }
-            }
-        }
+        //private void OnCollisonStay(Collision other)
+        //{
+        //if (stateString == "Ingame")
+        //    {
+        //        // decrement player health when a ghost or vampire is "hitting" them
+        //        if (other.gameObject.tag == "Monster")
+        //        {
+        //            health--;
+        //            healthSlider.GetComponent<Slider>().value = health;
+        //        }
+        //    }
+        //}
 }

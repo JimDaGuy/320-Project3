@@ -158,7 +158,7 @@ public class PlayerController : MonoBehaviour
             //"End" the game when the player reaches the end house
             if (other.gameObject.tag == "EndHouse")
             {
-                health = 0;
+                health = 10000;
             }
 
             //// stick lights to surfaces

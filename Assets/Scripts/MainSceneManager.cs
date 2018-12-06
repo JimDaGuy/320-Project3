@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class MainSceneManager : MonoBehaviour
 {
-    public enum GameStates { Ingame, Paused, Ended };
+    public enum GameStates { Ingame, Paused, Ended, Won };
     public GameStates currentState;
     
     public float controlsFadeDelay;
     public float controlsFadeDuration;
     public GameObject HUDCanvas;
     public GameObject deathCanvas;
+    public GameObject winCanvas;
     public GameObject pauseCanvas;
 
     public GameObject[] lightOrbs;
@@ -41,6 +42,22 @@ public class MainSceneManager : MonoBehaviour
         switch (currentState)
         {
             case GameStates.Ingame:
+                if (playerHealth == 10000)
+                {
+                    HUDCanvas.SetActive(false);
+                    pauseCanvas.SetActive(false);
+
+                    winCanvas.SetActive(true);
+
+                    controller.enabled = false;
+
+                    currentState = GameStates.Won;
+                    Time.timeScale = 0;
+
+                    // Turn off sound
+                    AudioListener.volume = 0f;
+                }
+
                 // End the game when health reaches 0
                 if (playerHealth <= 0)
                 {
@@ -57,25 +74,6 @@ public class MainSceneManager : MonoBehaviour
                     // Turn off sound
                     AudioListener.volume = 0f;
                 }
-
-                // Fade controls UI over time
-                /*
-                if (controlsFadeDelay > 0)
-                    controlsFadeDelay -= Time.deltaTime;
-                else
-                {
-                    controlsCanvas.GetComponent<CanvasGroup>().alpha -= 0;
-
-                    if (controlsCanvas.GetComponent<CanvasGroup>().alpha > 0)
-                        controlsCanvas.GetComponent<CanvasGroup>().alpha -= controlsFadeDuration / 100;
-                }
-
-                // Make Controls visible on C pressed
-                if (Input.GetKey(KeyCode.C))
-                {
-                    controlsCanvas.GetComponent<CanvasGroup>().alpha = 1;
-                }
-                */
 
                 // Pause game on P pressed
                 if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
@@ -138,6 +136,32 @@ public class MainSceneManager : MonoBehaviour
                 }
                 break;
             case GameStates.Ended:
+                // Return to main menu on escape pressed
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    Time.timeScale = 1;
+
+                    // Enable Cursor
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+
+                    // Turn on sound
+                    AudioListener.volume = 1.0f;
+
+                    SceneManager.LoadScene(0);
+                }
+
+                // Restart Game
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    // Turn on sound
+                    AudioListener.volume = 1.0f;
+
+                    Time.timeScale = 1;
+                    SceneManager.LoadScene(1);
+                }
+                break;
+            case GameStates.Won:
                 // Return to main menu on escape pressed
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {

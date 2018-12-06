@@ -105,8 +105,8 @@ public class PlayerController : MonoBehaviour
 		// mark the time the light was created
 		lastFire = Time.time;
 
-		// remove stake after 2 seconds
-		Destroy(light, 5.0f);
+		// remove stake after 20 seconds
+		Destroy(light, 20.0f);
 	}
 	
         /*

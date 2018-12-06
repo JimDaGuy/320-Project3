@@ -10,16 +10,10 @@ public class Devil : Vehicle
     //public Material targetMat;
     public GameObject player;
 
-    //vars for the two speeds of this monster
-    private float defaultSpeed;
-    private float chasingLightSpeed;
-
     // Use this for initialization
     protected override void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        defaultSpeed = maxSpeed;
-        chasingLightSpeed = maxSpeed * 2;
     }
 
     protected override void CalcSteeringForces()
@@ -45,7 +39,6 @@ public class Devil : Vehicle
                 {
                     ultimateForce = Seek(lightOrb.transform.position) * distanceToOrb;
                     maxDistance = distanceToOrb;
-                    maxSpeed = chasingLightSpeed;
                 }
                 //delete the light orb if the monster is close enough and temporarily stop the monster
                 if(maxDistance < 1.0f)
@@ -53,6 +46,7 @@ public class Devil : Vehicle
                     velocity = new Vector3();
                     acceleration = new Vector3();
                     Destroy(lightOrb);
+                    break;
                 }
             }
         }
@@ -64,13 +58,11 @@ public class Devil : Vehicle
             if(player && Vector3.Distance(gameObject.transform.position, player.transform.position) < maxDistance)
             {
                 ultimateForce += Seek(player.transform.position) * seekWeight;
-                maxSpeed = defaultSpeed;
             }
             //wandering if nothing is nearby or the player has despawned
             else
             {
                 ultimateForce += Wander() * wanderWeight;
-                maxSpeed = defaultSpeed;
             }
         }
         //avoid obstacles

@@ -150,16 +150,25 @@ public class PlayerController : MonoBehaviour
         newLightUI.transform.SetParent(heldLightUIParent.transform, false);
         heldLightUI = newLightUI;
     }
-	
-	private void OnCollisionEnter(Collision other)
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //"End" the game when the player reaches the end house
+        if (other.gameObject.tag == "EndHouse")
+        {
+            health = 10000;
+        }
+        if (other.gameObject.tag == "Pickup")
+        {
+            ammo++;
+            Destroy(other.gameObject, 0);
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
 	{
         if (stateString == "Ingame")
         {
-            //"End" the game when the player reaches the end house
-            if (other.gameObject.tag == "EndHouse")
-            {
-                health = 10000;
-            }
 
             //// stick lights to surfaces
             //if (other.gameObject.tag == "Iron" && other.gameObject.tag != "Player" && sticky)
@@ -172,12 +181,6 @@ public class PlayerController : MonoBehaviour
             {
                 //Debug.Log("Hitting the monster!");
                 health = 0;
-            }
-
-            if (other.gameObject.tag == "Pickup")
-            {
-                ammo++;
-                Destroy(other.gameObject, 0);
             }
         }
     }

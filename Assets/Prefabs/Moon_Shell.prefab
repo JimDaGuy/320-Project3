@@ -1130,7 +1130,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
-  maxSpeed: 5
+  maxSpeed: 3
   acceleration: {x: 0, y: 0, z: 0}
   mass: 10
   maxForce: 100

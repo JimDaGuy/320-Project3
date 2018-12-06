@@ -37,8 +37,8 @@ public class PlayerController : MonoBehaviour
     public int maxAmmo;
 	public int score;
 
-	private float fireTime = 0.5f;
-    private float manaRegenTime = 2.0f;
+	private float fireTime = 1.0f;
+    private float manaRegenTime = 12.0f;
 
 	void Start ()
 	{
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
 		lastFire = Time.time;
 
 		// remove stake after 2 seconds
-		Destroy(light, 4.0f);
+		Destroy(light, 5.0f);
 	}
 	
         /*

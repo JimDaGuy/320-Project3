@@ -46,7 +46,7 @@ public class MainSceneManager : MonoBehaviour
         {
             case GameStates.Ingame:
                 // Update compass position
-                float playerRotation = player.transform.eulerAngles.y + 210f;
+                float playerRotation = 150f - player.transform.eulerAngles.y;
                 compassRot = new Vector3(0, 0, playerRotation);
                 compassPointer.transform.eulerAngles = compassRot;
 

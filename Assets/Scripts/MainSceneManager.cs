@@ -15,6 +15,8 @@ public class MainSceneManager : MonoBehaviour
     public GameObject deathCanvas;
     public GameObject winCanvas;
     public GameObject pauseCanvas;
+    public GameObject compassPointer;
+    public Vector3 compassRot;
 
     public GameObject[] lightOrbs;
     public GameObject[] monsters;
@@ -29,6 +31,7 @@ public class MainSceneManager : MonoBehaviour
         currentState = GameStates.Ingame;
         Time.timeScale = 1;
         monsters = GameObject.FindGameObjectsWithTag("Monster");
+        compassPointer = GameObject.FindGameObjectWithTag("CompassPointer");
     }
 
     // Update is called once per frame
@@ -42,6 +45,11 @@ public class MainSceneManager : MonoBehaviour
         switch (currentState)
         {
             case GameStates.Ingame:
+                // Update compass position
+                float playerRotation = player.transform.eulerAngles.y + 210f;
+                compassRot = new Vector3(0, 0, playerRotation);
+                compassPointer.transform.eulerAngles = compassRot;
+
                 if (playerHealth == 10000)
                 {
                     HUDCanvas.SetActive(false);

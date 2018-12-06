@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
 	        float zPos = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
 	        transform.Rotate(0, xPos, 0);
+                lightSpawn.Rotate(0, xPos, 0);
 	        transform.Translate(0, 0, zPos);
 
             lastManaIncrease += Time.deltaTime;

@@ -16,3 +16,7 @@ Several assets from the Unity Asset Store were utilized.
 
 - Mana Symbol https://opengameart.org/content/colored-summoning-circles
 - Main Menu Background https://unsplash.com/@jacekraniowski
+
+- Green Forest Scene https://assetstore.unity.com/packages/3d/environments/fantasy/green-forest-22762
+
+- Mushroom House https://assetstore.unity.com/packages/3d/environments/fantasy/mushroom-house-61027

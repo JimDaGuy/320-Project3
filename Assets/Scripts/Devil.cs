@@ -9,6 +9,7 @@ public class Devil : Vehicle
     //attributes
     //public Material targetMat;
     public GameObject player;
+        private bool inStarting = true;
 
     // Use this for initialization
     protected override void Start()
@@ -18,11 +19,15 @@ public class Devil : Vehicle
 
     protected override void CalcSteeringForces()
     {
-        // if player is in starting zone, don't begin to seek
+        // if player is in starting zone, don't begin to seek, but seek into the starting zone once they have departed
         if (player.transform.position.x > 170 && player.transform.position.x < 230 
-                && player.transform.position.z > 815 && player.transform.position.z < 880)    // x = 170 to 239 z = 880 to 815
+                && player.transform.position.z > 815 && player.transform.position.z < 880 && inStarting == true)    // x = 170 to 239 z = 880 to 815
         {
                 return;
+        }
+        else if(inStarting == true)
+        {
+                inStarting = false;
         }
 
         //find the closest human and hunt them down, paying no mind to building edges

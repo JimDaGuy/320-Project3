@@ -1,22 +1,29 @@
 Several assets from the Unity Asset Store were utilized.
 
-- Standard Assets from Unity - Terrain, FirstPersonController
+Standard Assets from Unity - Terrain, FirstPersonController
 
-- Simple Torch by Axel Vaude - Torches
+Simple Torch by Axel Vaude - Torches
 
-- Skybox Series Free by Avionx - Skybox
+Skybox Series Free by Avionx - Skybox
 
-- Unity Nav Mesh Components - NavMesh
+Unity Nav Mesh Components - NavMesh
 
-- Keyboard by LushkinR - Keyboard key UI - https://opengameart.org/content/keyboard
+Keyboard by LushkinR - Keyboard key UI - https://opengameart.org/content/keyboard
 
-- Heart in UI taken from Open Game Art - https://opengameart.org/content/heart-3
-- Nature Kit by KenneyNL - Environment Prefabs - https://kenney.nl/assets/nature-kit
-- Castle Kit by KenneyNL - Environment Prefabs - https://kenney.nl/assets/castle-kit
+Heart in UI taken from Open Game Art - https://opengameart.org/content/heart-3
 
-- Mana Symbol https://opengameart.org/content/colored-summoning-circles
-- Main Menu Background https://unsplash.com/@jacekraniowski
+Mana Symbol - https://opengameart.org/content/colored-summoning-circles
 
-- Green Forest Scene https://assetstore.unity.com/packages/3d/environments/fantasy/green-forest-22762
+Main Menu Background - https://unsplash.com/@jacekraniowski
 
-- Mushroom House https://assetstore.unity.com/packages/3d/environments/fantasy/mushroom-house-61027
+Green Forest Scene https://assetstore.unity.com/packages/3d/environments/fantasy/green-forest-22762
+
+Mushroom House https://assetstore.unity.com/packages/3d/environments/fantasy/mushroom-house-61027
+
+Hand (Low Poly) - https://sketchfab.com/models/d6c802a74a174c8c805deb20186d1877#download
+
+Monster Noises - https://assetstore.unity.com/packages/audio/sound-fx/monster-sfx-111518-132868
+
+Medieval Exteriors - https://assetstore.unity.com/packages/3d/environments/fantasy/medieval-town-exteriors-27026
+
+Crystals - https://assetstore.unity.com/packages/3d/props/toon-crystals-pack-66182

@@ -37,8 +37,8 @@ public class PlayerController : MonoBehaviour
     public int maxAmmo;
 	public int score;
 
-	private float fireTime = 0.5f;
-    private float manaRegenTime = 2.0f;
+	private float fireTime = 1.0f;
+    private float manaRegenTime = 20.0f;
 
 	void Start ()
 	{
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
 	        float zPos = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
 	        transform.Rotate(0, xPos, 0);
+                lightSpawn.Rotate(0, xPos, 0);
 	        transform.Translate(0, 0, zPos);
 
             lastManaIncrease += Time.deltaTime;
@@ -104,8 +105,8 @@ public class PlayerController : MonoBehaviour
 		// mark the time the light was created
 		lastFire = Time.time;
 
-		// remove stake after 2 seconds
-		Destroy(light, 4.0f);
+		// remove stake after 20 seconds
+		Destroy(light, 20.0f);
 	}
 	
         /*

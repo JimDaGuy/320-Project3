@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 	public int score;
 
 	private float fireTime = 1.0f;
-    private float manaRegenTime = 12.0f;
+    private float manaRegenTime = 20.0f;
 
 	void Start ()
 	{

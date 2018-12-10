@@ -16,6 +16,10 @@ Mana Symbol - https://opengameart.org/content/colored-summoning-circles
 
 Main Menu Background - https://unsplash.com/@jacekraniowski
 
+Green Forest Scene https://assetstore.unity.com/packages/3d/environments/fantasy/green-forest-22762
+
+Mushroom House https://assetstore.unity.com/packages/3d/environments/fantasy/mushroom-house-61027
+
 Hand (Low Poly) - https://sketchfab.com/models/d6c802a74a174c8c805deb20186d1877#download
 
 Monster Noises - https://assetstore.unity.com/packages/audio/sound-fx/monster-sfx-111518-132868
@@ -23,4 +27,3 @@ Monster Noises - https://assetstore.unity.com/packages/audio/sound-fx/monster-sf
 Medieval Exteriors - https://assetstore.unity.com/packages/3d/environments/fantasy/medieval-town-exteriors-27026
 
 Crystals - https://assetstore.unity.com/packages/3d/props/toon-crystals-pack-66182
-
